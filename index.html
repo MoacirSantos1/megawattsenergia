@@ -2028,11 +2028,10 @@ a { color: inherit; text-decoration: none; }
         <div class="form-title">Solicite seu Orçamento</div>
         <!--
           ┌─────────────────────────────────────────────────────────────────┐
-          │  COMO ATIVAR O ENVIO POR E-MAIL (Formspree — gratuito):           │
-          │  1. Acesse https://formspree.io e crie conta com moacir_santos    │
-          │  2. Crie um novo formulário, copie o ID (ex: xayzqwer)            │
-          │  3. Troque "SEU_ID_FORMSPREE" abaixo pelo ID que você recebeu     │
-          │  Enquanto não fizer isso, o botão verde do WhatsApp já funciona!  │
+          │  ENVIO POR E-MAIL ATIVO via Formspree (ID: mbdedrew)              │
+          │  Os orçamentos enviados pelo botão "Enviar por E-mail" chegam      │
+          │  no e-mail cadastrado na conta do Formspree.                      │
+          │  Para trocar a conta de destino, acesse https://formspree.io      │
           └─────────────────────────────────────────────────────────────────┘
         -->
         <form id="orcamentoForm" action="https://formspree.io/f/mbdedrew" method="POST">
@@ -2324,8 +2323,8 @@ if (form) {
     e.preventDefault();
     if (!validarObrigatorios()) return;
 
-    // Se ainda não configurou o Formspree, redireciona para WhatsApp
-    if (form.action.includes('mbdedrew')) {
+    // Se o Formspree não estiver configurado, redireciona para WhatsApp
+    if (form.action.includes('SEU_ID')) {
       const url = 'https://api.whatsapp.com/send?phone=' + NUMERO_WHATSAPP +
                   '&text=' + montarMensagem();
       window.open(url, '_blank');
