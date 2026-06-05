@@ -1011,6 +1011,50 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(27,94,107,0.35);
 }
+.form-btn-wpp {
+  background: #25D366;
+  box-shadow: 0 4px 14px rgba(37,211,102,0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-btn-wpp:hover {
+  background: #1ebe5a;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.42);
+}
+.form-btn-email {
+  background: var(--white);
+  color: var(--teal);
+  border: 1.5px solid var(--teal);
+  box-shadow: none;
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 11px;
+}
+.form-btn-email:hover {
+  background: var(--teal-light);
+  color: var(--teal);
+}
+.form-note {
+  font-size: 11.5px;
+  color: var(--gray-mid);
+  text-align: center;
+  margin-top: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+.form-success {
+  background: var(--teal-light);
+  border: 1.5px solid var(--teal);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  color: var(--teal);
+}
+.form-success svg { width: 48px; height: 48px; margin-bottom: 10px; }
+.form-success-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.form-success-text { font-size: 13.5px; color: var(--gray-dark); line-height: 1.5; }
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -1981,8 +2025,17 @@ a { color: inherit; text-decoration: none; }
     <h2 class="section-title" id="contact-title">Solicite seu Orçamento Grátis</h2>
     <div class="contact-grid">
       <div class="contact-form" role="form" aria-label="Formulário de contato">
-        <div class="form-title">Formulário de Contato</div>
-        <form action="mailto:moacir_santos@terra.com.br" method="get" enctype="text/plain">
+        <div class="form-title">Solicite seu Orçamento</div>
+        <!--
+          ┌─────────────────────────────────────────────────────────────────┐
+          │  COMO ATIVAR O ENVIO POR E-MAIL (Formspree — gratuito):           │
+          │  1. Acesse https://formspree.io e crie conta com moacir_santos    │
+          │  2. Crie um novo formulário, copie o ID (ex: xayzqwer)            │
+          │  3. Troque "SEU_ID_FORMSPREE" abaixo pelo ID que você recebeu     │
+          │  Enquanto não fizer isso, o botão verde do WhatsApp já funciona!  │
+          └─────────────────────────────────────────────────────────────────┘
+        -->
+        <form id="orcamentoForm" action="https://formspree.io/f/mbdedrew" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="nome">Nome Completo *</label>
@@ -1990,7 +2043,7 @@ a { color: inherit; text-decoration: none; }
             </div>
             <div class="form-group">
               <label class="form-label" for="tel">Telefone / WhatsApp *</label>
-              <input class="form-input" type="tel" id="tel" name="tel" placeholder="(11) 99999-9999" required autocomplete="tel">
+              <input class="form-input" type="tel" id="tel" name="telefone" placeholder="(11) 99999-9999" required autocomplete="tel">
             </div>
           </div>
           <div class="form-row">
@@ -2028,9 +2081,16 @@ a { color: inherit; text-decoration: none; }
           </div>
           <div class="form-group">
             <label class="form-label" for="msg">Mensagem</label>
-            <textarea class="form-textarea" id="msg" name="msg" placeholder="Descreva brevemente o que você precisa..."></textarea>
+            <textarea class="form-textarea" id="msg" name="mensagem" placeholder="Descreva brevemente o que você precisa..."></textarea>
           </div>
-          <button type="submit" class="form-btn">Enviar Solicitação →</button>
+
+          <!-- Botão principal: envia via WhatsApp (sempre funciona) -->
+          <button type="button" class="form-btn form-btn-wpp" id="btnWhatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true" style="vertical-align:-4px;margin-right:6px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+          <button type="submit" class="form-btn form-btn-email">Enviar por E-mail</button>
+          <p class="form-note">Resposta mais rápida pelo WhatsApp. Atendimento de seg. a sex., 8h às 18h.</p>
         </form>
       </div>
       <div class="contact-info">
@@ -2210,6 +2270,97 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.35 });
 sections.forEach(s => observer.observe(s));
+
+// ── FORMULÁRIO DE ORÇAMENTO ──────────────────────────────
+const form = document.getElementById('orcamentoForm');
+const NUMERO_WHATSAPP = '5511997201621'; // (11) 99720-1621
+
+function montarMensagem() {
+  const nome    = (document.getElementById('nome').value || '').trim();
+  const tel     = (document.getElementById('tel').value || '').trim();
+  const email   = (document.getElementById('email').value || '').trim();
+  const cidade  = (document.getElementById('cidade').value || '').trim();
+  const servico = (document.getElementById('servico').value || '').trim();
+  const msg     = (document.getElementById('msg').value || '').trim();
+
+  let texto = '*Solicitação de Orçamento — Site MegaWatts*%0A%0A';
+  texto += '*Nome:* ' + encodeURIComponent(nome) + '%0A';
+  texto += '*Telefone:* ' + encodeURIComponent(tel) + '%0A';
+  if (email)  texto += '*E-mail:* ' + encodeURIComponent(email) + '%0A';
+  texto += '*Cidade:* ' + encodeURIComponent(cidade) + '%0A';
+  texto += '*Serviço:* ' + encodeURIComponent(servico) + '%0A';
+  if (msg) texto += '*Mensagem:* ' + encodeURIComponent(msg);
+  return texto;
+}
+
+function validarObrigatorios() {
+  const obrig = ['nome','tel','cidade','servico'];
+  for (const id of obrig) {
+    const campo = document.getElementById(id);
+    if (!campo.value.trim()) {
+      campo.focus();
+      campo.style.borderColor = '#C0392B';
+      setTimeout(() => { campo.style.borderColor = ''; }, 2500);
+      return false;
+    }
+  }
+  return true;
+}
+
+// Botão WhatsApp (principal — sempre funciona)
+const btnWpp = document.getElementById('btnWhatsapp');
+if (btnWpp) {
+  btnWpp.addEventListener('click', function() {
+    if (!validarObrigatorios()) return;
+    const url = 'https://api.whatsapp.com/send?phone=' + NUMERO_WHATSAPP +
+                '&text=' + montarMensagem();
+    window.open(url, '_blank');
+  });
+}
+
+// Envio por e-mail via Formspree (precisa configurar o ID)
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    if (!validarObrigatorios()) return;
+
+    // Se ainda não configurou o Formspree, redireciona para WhatsApp
+    if (form.action.includes('mbdedrew')) {
+      const url = 'https://api.whatsapp.com/send?phone=' + NUMERO_WHATSAPP +
+                  '&text=' + montarMensagem();
+      window.open(url, '_blank');
+      return;
+    }
+
+    const btn = form.querySelector('.form-btn-email');
+    const textoOriginal = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    try {
+      const resposta = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (resposta.ok) {
+        form.innerHTML = '<div class="form-success">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>' +
+          '<div class="form-success-title">Solicitação enviada!</div>' +
+          '<div class="form-success-text">Recebemos seu pedido de orçamento e entraremos em contato em breve. Obrigado!</div>' +
+          '</div>';
+      } else {
+        throw new Error('Falha no envio');
+      }
+    } catch (err) {
+      btn.textContent = textoOriginal;
+      btn.disabled = false;
+      const url = 'https://api.whatsapp.com/send?phone=' + NUMERO_WHATSAPP +
+                  '&text=' + montarMensagem();
+      window.open(url, '_blank');
+    }
+  });
+}
 </script>
 </body>
 </html>
