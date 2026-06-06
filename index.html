@@ -21,26 +21,13 @@
   "url": "https://megawattsenergia.com.br",
   "telephone": "+55-11-99720-1621",
   "email": "moacir_santos@terra.com.br",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rua das Primaveras, 95",
-    "addressLocality": "Caieiras",
-    "addressRegion": "SP",
-    "postalCode": "07716-295",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -23.3416,
-    "longitude": -46.7529
-  },
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
     "opens": "08:00",
     "closes": "18:00"
   }],
-  "areaServed": ["Caieiras","Franco da Rocha","Mairiporã","Francisco Morato","Atibaia","Jarinu","Joanópolis"],
+  "areaServed": ["Caieiras","Franco da Rocha","Mairiporã","Francisco Morato","Atibaia","Jarinu","Cabreúva"],
   "description": "Empresa especializada em engenharia elétrica de média e baixa tensão, homologada nas normas da Neoenergia Elektro.",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -48,7 +35,8 @@
     "itemListElement": [
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Cabines Primárias"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Projetos Elétricos"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"SPDA Para-Raios"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Energia Solar"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Projetos de Alimentação e Entrada"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medição Coletiva"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Análise de Fatura"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Assessoria Técnica"}}
@@ -76,7 +64,7 @@
       "name": "Quanto tempo leva a aprovação de projeto na Elektro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Projetos residenciais simples levam de 15 a 30 dias. Cabines primárias podem levar de 30 a 90 dias. Cuidamos de todo o processo junto à concessionária."
+        "text": "Cabines primárias, transformadores particulares e ligações coletivas levam em média 30 dias, dependendo da complexidade. Cuidamos de todo o processo junto à concessionária."
       }
     },
     {
@@ -1504,7 +1492,7 @@ a { color: inherit; text-decoration: none; }
     <div class="topbar-info">
       <div class="topbar-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-        Caieiras, SP — Região Neoenergia Elektro
+        Atendemos toda a região da Neoenergia Elektro
       </div>
       <div class="topbar-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -1682,7 +1670,7 @@ a { color: inherit; text-decoration: none; }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
         <h3>Nossos Serviços</h3>
-        <p>Projetos elétricos de média e baixa tensão, instalação e manutenção de cabines primárias, instalação de medições coletivas e agrupadas, instalação de SPDA, análises de faturas de energia elétrica, alteração de demanda e fornecimento de ARTs.</p>
+        <p>Projetos elétricos de média e baixa tensão, instalação e manutenção de cabines primárias, instalação de medições coletivas e agrupadas, energia solar fotovoltaica, projetos de alimentação e entrada, análises de faturas de energia elétrica, alteração de demanda e fornecimento de ARTs.</p>
         <a href="#servicos" style="display:inline-block;margin-top:12px;font-size:13px;font-weight:700;color:var(--teal);">Ver serviços →</a>
       </article>
       <article class="welcome-card">
@@ -1729,11 +1717,19 @@ a { color: inherit; text-decoration: none; }
       </article>
       <article class="service-card" itemscope itemtype="https://schema.org/Service">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 22V12a1 1 0 011-1h3a1 1 0 011 1v10M9 22h6M15 22V8M9 11V6l3-4 3 4v3"/><line x1="2" y1="22" x2="22" y2="22"/></svg>
         </div>
-        <h3 class="service-name" itemprop="name">SPDA / Para-Raios</h3>
-        <p class="service-desc" itemprop="description">Sistemas de proteção contra descargas atmosféricas (SPDA) para residências, comércios e indústrias conforme NBR 5419.</p>
-        <span class="service-tag">NBR 5419</span>
+        <h3 class="service-name" itemprop="name">Projetos de Alimentação / Entrada</h3>
+        <p class="service-desc" itemprop="description">Projetos elétricos de alimentação e entrada de energia para residências, comércios e indústrias, conforme padrão da Neoenergia Elektro.</p>
+        <span class="service-tag">Padrão Elektro</span>
+      </article>
+      <article class="service-card" itemscope itemtype="https://schema.org/Service">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </div>
+        <h3 class="service-name" itemprop="name">Energia Solar</h3>
+        <p class="service-desc" itemprop="description">Projeto e instalação de sistemas de energia solar fotovoltaica para residências, comércios e indústrias, com economia na conta de luz.</p>
+        <span class="service-tag">Economia Sustentável</span>
       </article>
       <article class="service-card" itemscope itemtype="https://schema.org/Service">
         <div class="service-icon">
@@ -1935,7 +1931,7 @@ a { color: inherit; text-decoration: none; }
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </div>
           <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-            <span itemprop="text">Projetos residenciais simples levam de 15 a 30 dias. Cabines primárias podem levar de 30 a 90 dias dependendo da complexidade. Cuidamos de todo o processo junto à concessionária.</span>
+            <span itemprop="text">Cabines primárias, transformadores particulares e ligações coletivas levam em média 30 dias, dependendo da complexidade. Cuidamos de todo o processo junto à concessionária.</span>
           </div>
         </div>
         <div class="faq-item" itemscope itemtype="https://schema.org/Question">
@@ -2048,7 +2044,8 @@ a { color: inherit; text-decoration: none; }
               <option value="">Selecione o serviço...</option>
               <option>Cabine Primária</option>
               <option>Projeto Elétrico</option>
-              <option>SPDA / Para-Raios</option>
+              <option>Energia Solar</option>
+              <option>Projeto de Alimentação / Entrada</option>
               <option>Medição Coletiva</option>
               <option>Análise de Fatura</option>
               <option>Assessoria Técnica</option>
@@ -2081,19 +2078,6 @@ a { color: inherit; text-decoration: none; }
         </a>
         <div class="info-card">
           <div class="info-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <div>
-            <div class="info-label">Endereço</div>
-            <div class="info-value" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-              <span itemprop="streetAddress">Rua das Primaveras, 95</span><br>
-              <span itemprop="addressLocality">Caieiras</span> — <span itemprop="addressRegion">SP</span><br>
-              CEP <span itemprop="postalCode">07716-295</span>
-            </div>
-          </div>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div>
@@ -2110,15 +2094,14 @@ a { color: inherit; text-decoration: none; }
             <div class="info-value"><a href="mailto:moacir_santos@terra.com.br" style="color:var(--teal)">moacir_santos@terra.com.br</a></div>
           </div>
         </div>
-        <!-- Google Maps embed placeholder -->
-        <div style="background:var(--gray-light);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;">
-          <iframe
-            title="Localização MegaWatts Energia — Caieiras SP"
-            src="https://maps.google.com/maps?q=Rua+das+Primaveras+95+Caieiras+SP&output=embed"
-            width="100%" height="180" style="border:0;display:block;"
-            allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="info-label">Instagram</div>
+            <div class="info-value"><a href="https://www.instagram.com/megawatts_energia" target="_blank" rel="noopener" style="color:var(--teal)">@megawatts_energia</a></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2158,7 +2141,8 @@ a { color: inherit; text-decoration: none; }
         <div class="footer-links">
           <a href="#servicos" class="footer-link">Cabines Primárias</a>
           <a href="#servicos" class="footer-link">Projetos Elétricos</a>
-          <a href="#servicos" class="footer-link">SPDA / Para-Raios</a>
+          <a href="#servicos" class="footer-link">Energia Solar</a>
+          <a href="#servicos" class="footer-link">Projetos de Alimentação / Entrada</a>
           <a href="#servicos" class="footer-link">Medição Coletiva</a>
           <a href="#servicos" class="footer-link">Análise de Fatura</a>
           <a href="#servicos" class="footer-link">Assessoria Técnica</a>
@@ -2176,8 +2160,6 @@ a { color: inherit; text-decoration: none; }
       <div>
         <div class="footer-col-title">Contato</div>
         <div class="footer-links">
-          <span class="footer-link" style="color:rgba(255,255,255,0.55);">Rua das Primaveras, 95</span>
-          <span class="footer-link" style="color:rgba(255,255,255,0.55);">Caieiras — SP, 07716-295</span>
           <a href="tel:+5511997201621" class="footer-link" style="color:var(--orange);font-weight:600;">(11) 99720-1621</a>
           <a href="mailto:moacir_santos@terra.com.br" class="footer-link">moacir_santos@terra.com.br</a>
           <a href="https://www.instagram.com/megawatts_energia" class="footer-link" target="_blank" rel="noopener">@megawatts_energia</a>
@@ -2185,7 +2167,7 @@ a { color: inherit; text-decoration: none; }
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 MegaWatts Energia. Todos os direitos reservados. Caieiras, SP.</span>
+      <span>© 2025 MegaWatts Energia. Todos os direitos reservados.</span>
       <div class="footer-schema-badge">
         <span class="schema-dot"></span>
         Schema.org: LocalBusiness + Service + FAQ
