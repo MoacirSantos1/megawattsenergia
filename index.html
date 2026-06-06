@@ -1463,6 +1463,18 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 600px) {
   .insta-section { padding: 48px 0; }
+.insta-embed {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+.insta-embed iframe { display: block; width: 100% !important; }
+@media (max-width: 600px) {
+  .insta-embed iframe { height: 420px !important; }
+}
+
   .insta-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -1533,6 +1545,10 @@ a { color: inherit; text-decoration: none; }
       <a href="#servicos" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         Serviços
+      </a>
+      <a href="#cidades" class="nav-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
+        Cidades
       </a>
       <a href="#contato" class="nav-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.17 2.2 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1816,7 +1832,7 @@ a { color: inherit; text-decoration: none; }
       <div>
         <div class="section-eyebrow">Nossas Obras em Fotos</div>
         <h2 class="section-title" id="insta-title">Galeria de Projetos</h2>
-        <p class="section-sub">Acompanhe nossos trabalhos e projetos realizados na região. As fotos ao vivo do Instagram carregam automaticamente quando o site estiver online. Siga-nos para acompanhar as novidades em tempo real.</p>
+        <p class="section-sub">Acompanhe nossos trabalhos e projetos elétricos realizados na região, direto do nosso Instagram. Siga @megawatts_energia para ver as novidades em tempo real.</p>
       </div>
       <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-follow-btn" aria-label="Seguir @megawatts_energia no Instagram">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1824,112 +1840,73 @@ a { color: inherit; text-decoration: none; }
       </a>
     </div>
 
-    <!-- Live Instagram Feed via SnapWidget / elfsight embed -->
-    <!-- Fallback: grid of placeholder cards + link to profile -->
-    <div class="insta-feed" id="instaFeed">
-      <!-- Populated by script below -->
+    <!-- Feed do Instagram via SnapWidget (fotos reais de @megawatts_energia) -->
+    <div class="insta-embed">
+      <iframe src="https://snapwidget.com/embed/1124852"
+              class="snapwidget-widget"
+              allowtransparency="true" frameborder="0" scrolling="no"
+              style="border:none; overflow:hidden; width:100%; height:510px;"
+              title="Fotos do Instagram da MegaWatts Energia"
+              loading="lazy"></iframe>
     </div>
+  </div>
+</section>
 
-    <!-- Static preview cards (always visible, real thumbnails loaded via oEmbed) -->
-    <div class="insta-grid" id="instaGrid">
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card insta-card--featured" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFCNEY1QSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwRDJGMzYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8cmVjdCB4PSIxNTgiIHk9IjEzMCIgd2lkdGg9Ijg0IiBoZWlnaHQ9IjgwIiByeD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHJlY3QgeD0iMTcyIiB5PSIxNDMiIHdpZHRoPSIyNCIgaGVpZ2h0PSIzNiIgcng9IjIiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC43KSIvPjxyZWN0IHg9IjIwNCIgeT0iMTQzIiB3aWR0aD0iMjQiIGhlaWdodD0iMzYiIHJ4PSIyIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiLz48bGluZSB4MT0iMjAwIiB5MT0iMTMwIiB4Mj0iMjAwIiB5Mj0iMTIwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMTUiIHI9IjYiIGZpbGw9IiNGNUE2MjMiLz4KICA8IS0tIEJvdHRvbSBsYWJlbCBiYW5kIC0tPgogIDxyZWN0IHg9IjAiIHk9IjMzMCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI3MCIgZmlsbD0icmdiYSgwLDAsMCwwLjQ1KSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5DYWJpbmUgUHJpbcOhcmlhPC90ZXh0Pgo8L3N2Zz4="
-                 alt="Cabine primária instalada pela MegaWatts Energia em Caieiras SP"
-                 loading="lazy" width="320" height="320">
-            <div class="insta-overlay">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </div>
-          </div>
-          <div class="insta-card-label">Cabine Primária</div>
-        </div>
+<!-- ══════════════════════════════════
+     CIDADES ATENDIDAS (páginas locais)
+══════════════════════════════════ -->
+<section class="local-cities" id="cidades" aria-labelledby="cidades-title" style="padding:64px 0;background:var(--white);">
+  <div class="container">
+    <div class="section-eyebrow">Onde Atendemos</div>
+    <h2 class="section-title" id="cidades-title">Cidades Atendidas pela MegaWatts</h2>
+    <p class="section-sub" style="margin-bottom:32px">Engenharia elétrica especializada nas normas da Neoenergia Elektro em toda a região. Clique na sua cidade para saber mais:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <a href="caieiras.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Caieiras</h3>
+        <p class="service-desc">Nossa sede. Engenharia elétrica completa para toda a cidade.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFBM0E0QSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwRjI1MzAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8cmVjdCB4PSIxNTUiIHk9IjEyOCIgd2lkdGg9IjkwIiBoZWlnaHQ9Ijg0IiByeD0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iMTcwIiB5MT0iMTUwIiB4Mj0iMjMwIiB5Mj0iMTUwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTcwIiB5MT0iMTYyIiB4Mj0iMjMwIiB5Mj0iMTYyIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC42KSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSIxODAiIHI9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxODAiIHI9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48Y2lyY2xlIGN4PSIyMjAiIGN5PSIxODAiIHI9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8IS0tIEJvdHRvbSBsYWJlbCBiYW5kIC0tPgogIDxyZWN0IHg9IjAiIHk9IjMzMCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI3MCIgZmlsbD0icmdiYSgwLDAsMCwwLjQ1KSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5DYWJpbmUgZGUgRW5lcmdpYTwvdGV4dD4KPC9zdmc+"
-                 alt="Cabine de energia instalação MegaWatts Energia"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Cabine de Energia</div>
-        </div>
+      <a href="franco-da-rocha.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Franco da Rocha</h3>
+        <p class="service-desc">Projetos elétricos e cabines primárias com aprovação Elektro.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzE2MzI0MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwQTFFMjgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8cGF0aCBkPSJNMTc1IDIxMCBMMjAwIDEyOCBMMjI1IDIxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjE3NSIgeTE9IjE5NSIgeDI9IjIyNSIgeTI9IjE5NSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48bGluZSB4MT0iMTgwIiB5MT0iMTc1IiB4Mj0iMjIwIiB5Mj0iMTc1IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC43KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTI4IiByPSI4IiBmaWxsPSIjRjVBNjIzIi8+CiAgPCEtLSBCb3R0b20gbGFiZWwgYmFuZCAtLT4KICA8cmVjdCB4PSIwIiB5PSIzMzAiIHdpZHRoPSI0MDAiIGhlaWdodD0iNzAiIGZpbGw9InJnYmEoMCwwLDAsMC40NSkiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+SW5zdGFsYcOnw6NvIEV4dGVybmE8L3RleHQ+Cjwvc3ZnPg=="
-                 alt="Cabine externa instalação engenharia elétrica"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Instalação Externa</div>
-        </div>
+      <a href="mairipora.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Mairiporã</h3>
+        <p class="service-desc">Especialistas em condomínios, medição coletiva e cabines.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzEyMkEzOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwODE4MjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8bGluZSB4MT0iMjAwIiB5MT0iMTMwIiB4Mj0iMjAwIiB5Mj0iMjE1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNMTc1IDE3NSBRMjAwIDE5MCAyMjUgMTc1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHJlY3QgeD0iMTcwIiB5PSIyMTUiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMCIgcng9IjMiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC43KSIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE0NSIgcj0iMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHBhdGggZD0iTTE5NiAxNDEgTDIwMSAxNDUgTDE5NiAxNDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQm90dG9tIGxhYmVsIGJhbmQgLS0+CiAgPHJlY3QgeD0iMCIgeT0iMzMwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjcwIiBmaWxsPSJyZ2JhKDAsMCwwLDAuNDUpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPkVuZXJnaWEgU3VidGVycsOibmVhPC90ZXh0Pgo8L3N2Zz4="
-                 alt="Instalação energia subterrânea projeto elétrico"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Instalação Subterrânea</div>
-        </div>
+      <a href="francisco-morato.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Francisco Morato</h3>
+        <p class="service-desc">Entradas de energia, regularização e projetos elétricos.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFDMzg1MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxMDFGMkUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8cmVjdCB4PSIxNjIiIHk9IjEzMCIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijg4IiByeD0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cmVjdCB4PSIxNzAiIHk9IjE0MCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiByeD0iMyIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjE1KSIvPjxjaXJjbGUgY3g9IjE4MyIgY3k9IjE4NSIgcj0iNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVBNjIzIiBzdHJva2Utd2lkdGg9IjIuNSIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE4NSIgcj0iNyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMjE3IiBjeT0iMTg1IiByPSI3IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTg1IiB5MT0iMTU1IiB4Mj0iMjE1IiB5Mj0iMTU1IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC41KSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8IS0tIEJvdHRvbSBsYWJlbCBiYW5kIC0tPgogIDxyZWN0IHg9IjAiIHk9IjMzMCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI3MCIgZmlsbD0icmdiYSgwLDAsMCwwLjQ1KSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5QYWluZWwgRWzDqXRyaWNvPC90ZXh0Pgo8L3N2Zz4="
-                 alt="Painel de voltagem residencial projeto elétrico MegaWatts"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Painel Elétrico</div>
-        </div>
+      <a href="atibaia.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Atibaia</h3>
+        <p class="service-desc">Projetos industriais, condomínios e cabines de alta complexidade.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFBMzU0NSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwRTFGMjgiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNjUiIHI9IjUwIiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIuNSIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE2NSIgcj0iMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjUpIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNjUiIHI9IjEyIiBmaWxsPSIjRjVBNjIzIi8+PGxpbmUgeDE9IjIwMCIgeTE9IjExNSIgeDI9IjIwMCIgeTI9IjEzMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIi8+PGxpbmUgeDE9IjIwMCIgeTE9IjIwMCIgeDI9IjIwMCIgeTI9IjIxNSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPCEtLSBCb3R0b20gbGFiZWwgYmFuZCAtLT4KICA8cmVjdCB4PSIwIiB5PSIzMzAiIHdpZHRoPSI0MDAiIGhlaWdodD0iNzAiIGZpbGw9InJnYmEoMCwwLDAsMC40NSkiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+VHJhbnNmb3JtYWRvcjwvdGV4dD4KPC9zdmc+"
-                 alt="Transformador de energia instalação MegaWatts Energia"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Transformador</div>
-        </div>
+      <a href="jarinu.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Jarinu</h3>
+        <p class="service-desc">Projetos industriais e cabines primárias para o polo logístico.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzE2MkUzRSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwQzFCMjUiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8bGluZSB4MT0iMjAwIiB5MT0iMjEwIiB4Mj0iMjAwIiB5Mj0iMTMwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiLz48bGluZSB4MT0iMTc1IiB5MT0iMTQ4IiB4Mj0iMjI1IiB5Mj0iMTQ4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIxNzUiIGN5PSIxNDgiIHI9IjYiIGZpbGw9IiNGNUE2MjMiLz48Y2lyY2xlIGN4PSIyMjUiIGN5PSIxNDgiIHI9IjYiIGZpbGw9IiNGNUE2MjMiLz48cGF0aCBkPSJNMTkyIDEzMCBMMjAwIDExOCBMMjA4IDEzMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjMpIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDwhLS0gQm90dG9tIGxhYmVsIGJhbmQgLS0+CiAgPHJlY3QgeD0iMCIgeT0iMzMwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjcwIiBmaWxsPSJyZ2JhKDAsMCwwLDAuNDUpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlBvc3RlIFJlc2lkZW5jaWFsPC90ZXh0Pgo8L3N2Zz4="
-                 alt="Poste de energia residencial instalação Elektro"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Poste Residencial</div>
-        </div>
+      <a href="cabreuva.html" class="service-card" style="text-decoration:none;display:block;">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div>
+        <h3 class="service-name">Cabreúva</h3>
+        <p class="service-desc">Engenharia elétrica para condomínios, indústrias e resorts.</p>
+        <span class="service-tag">Ver página →</span>
       </a>
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card" aria-label="Ver post no Instagram">
-        <div class="insta-card-inner">
-          <div class="insta-img-wrap">
-            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzE0MjkzQSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwQTE4MjIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjMwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSAzMCAwIEwgMCAwIDAgMzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPCEtLSBJY29uIGNpcmNsZSAtLT4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNzAiIHI9IjcwIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI1NiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gSWNvbiAtLT4KICA8bGluZSB4MT0iMjAwIiB5MT0iMjE1IiB4Mj0iMjAwIiB5Mj0iMTI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiLz48bGluZSB4MT0iMTY4IiB5MT0iMTQ1IiB4Mj0iMjMyIiB5Mj0iMTQ1IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIxNjgiIGN5PSIxNDUiIHI9IjUiIGZpbGw9IiNGNUE2MjMiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNDUiIHI9IjUiIGZpbGw9IiNGNUE2MjMiLz48Y2lyY2xlIGN4PSIyMzIiIGN5PSIxNDUiIHI9IjUiIGZpbGw9IiNGNUE2MjMiLz48cGF0aCBkPSJNMTk1IDEyOCBMMjAwIDExOCBMMjA1IDEyOCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjQpIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDwhLS0gQm90dG9tIGxhYmVsIGJhbmQgLS0+CiAgPHJlY3QgeD0iMCIgeT0iMzMwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjcwIiBmaWxsPSJyZ2JhKDAsMCwwLDAuNDUpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlBvc3RlIENvbmRvbcOtbmlvPC90ZXh0Pgo8L3N2Zz4="
-                 alt="Poste de energia condomínio instalação Neoenergia Elektro"
-                 loading="lazy" width="280" height="280">
-            <div class="insta-overlay"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
-          </div>
-          <div class="insta-card-label">Poste Condomínio</div>
-        </div>
-      </a>
-      <!-- CTA card -->
-      <a href="https://www.instagram.com/megawatts_energia/" target="_blank" rel="noopener" class="insta-card insta-card--cta" aria-label="Ver mais fotos no Instagram">
-        <div class="insta-card-inner insta-cta-inner">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          <div class="insta-cta-text">Ver todas as fotos</div>
-          <div class="insta-cta-handle">@megawatts_energia</div>
-        </div>
-      </a>
+      <div class="service-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--teal-light);border-color:var(--teal);">
+        <p style="font-size:13px;color:var(--teal);font-weight:600;margin-bottom:8px;">Sua cidade não está na lista?</p>
+        <a href="https://api.whatsapp.com/send?phone=5511997201621&text=Ol%C3%A1!%20Voc%C3%AAs%20atendem%20minha%20cidade%3F" target="_blank" rel="noopener" class="btn-primary" style="font-size:12px;padding:8px 16px;">Consultar Atendimento</a>
+      </div>
     </div>
   </div>
 </section>
